@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {VideoItem} from './VideoItem'
 export  const VideoList = ({videos}) => { 
   console.log(videos) 
     return (
@@ -7,12 +7,13 @@ export  const VideoList = ({videos}) => {
       <div>
        {
         videos.map((video, index) => 
-             <ul key={index}>
-              <li>{video.snippet.title}</li>
-             </ul>
+          <div key={index}>
+             <VideoItem video = {video}/>
+          </div>
          )
          
        }
+       
       </div>
     )
 
