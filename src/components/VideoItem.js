@@ -7,7 +7,7 @@ import React from 'react'
       // </ul>
       <div>
         <h1>{video.snippet.title}</h1>
-        <p>{video.snippet.description}</p>
+        <img src={video.snippet.thumbnails.medium.url} />
       </div>
     )
 }
