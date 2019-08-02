@@ -1,4 +1,6 @@
 import React from 'react'
+
+
 export default class SearchBar extends React.Component{
   constructor(props){
     super(props)
@@ -14,7 +16,7 @@ export default class SearchBar extends React.Component{
   }
   handleSearchSubmit(event){
     event.preventDefault()
-    console.log(this.state)
+    this.props.handleSearchSubmit(this.state.searchInput)
     this.setState({searchInput:''})
   }
   
