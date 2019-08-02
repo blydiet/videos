@@ -7,7 +7,7 @@ export  const VideoList = ({videos}) => {
       <div>
        {
         videos.map((video, index) => 
-          <div key={index}>
+          <div className="ui relaxed divided list" key={index}>
              <VideoItem video = {video}/>
           </div>
          )
