@@ -13,13 +13,9 @@ export default class App extends React.Component{
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
     this.handleSelectedVideoClick = this.handleSelectedVideoClick.bind(this)
   }
-  async componentDidMount(){
-    const {data} = await youtube.get('/search', {
-      params: {
-        q: 'see'
-      }
-    })
-    this.setState({videos: data.items, selectedVideo: data.items[0]})
+   componentDidMount(){
+     const defaultInput = 'see'
+    this.handleSearchSubmit(defaultInput)
   }
   async handleSearchSubmit(searchInput) {
      let  {data} = await youtube.get('/search', { params: {
