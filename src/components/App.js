@@ -20,21 +20,15 @@ export default class App extends React.Component{
      this.setState({videos: data.items})
      
   }
-  async handleSelectedVideoClick(selectedVideo){
-    let video = this.state.videos.map((video) => {
-      if (video.snippet.title === selectedVideo) {
-         return video
-      }
-    })
-    video = video.filter((singleVideo) => singleVideo !== undefined )
-    let videoSelected = video.pop()
-    await this.setState({selectedVideo: videoSelected.snippet}) 
+   handleSelectedVideoClick(selectedVideo){
+    this.setState({selectedVideo}) 
   }
   render(){
     return(
       <div className="ui container">
-       <SearchBar handleSearchSubmit={this.handleSearchSubmit}/>  <VideoList videos={this.state.videos} handleSelectedVideoClick={this.handleSelectedVideoClick} />
+       <SearchBar handleSearchSubmit={this.handleSearchSubmit}/> 
        <VideoDetails selectedVideo = {this.state.selectedVideo}/>
+        <VideoList videos={this.state.videos} handleSelectedVideoClick={this.handleSelectedVideoClick} />
       </div>
     )
   }
