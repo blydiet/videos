@@ -17,7 +17,8 @@ export default class App extends React.Component{
      let  {data} = await youtube.get('/search', { params: {
        q: searchInput
      }})
-     this.setState({videos: data.items})
+     console.log(data.items[0])
+     this.setState({videos: data.items, selectedVideo: data.items[0]})
      
   }
    handleSelectedVideoClick(selectedVideo){
